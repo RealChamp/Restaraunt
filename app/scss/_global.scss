@@ -1,0 +1,27 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Myriad Pro", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+}
+
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    display: inline-block;
+}
