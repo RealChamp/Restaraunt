@@ -4,7 +4,8 @@ let gulp = require('gulp'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
-    cssmin = require('gulp-cssmin');
+    cssmin = require('gulp-cssmin'),
+    uglify = require('gulp-uglify');
 
 gulp.task('sass', function () {
     return gulp.src('app/scss/**/*.scss')
@@ -26,10 +27,22 @@ gulp.task('sass', function () {
 gulp.task('style', function () {
     return gulp.src([
             'node_modules/normalize.css/normalize.css',
+            'node_modules/slick-carousel/slick/slick.css',
+            'node_modules/slick-carousel/slick/slick-theme.css'
         ])
         .pipe(concat('libs.min.css'))
         .pipe(cssmin())
         .pipe(gulp.dest('app/css'))
+});
+
+gulp.task('script', function () {
+    return gulp.src([
+       'node_modules/slick-carousel/slick/slick.js'
+   ])
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('app/js'))
+
 });
 
 
@@ -64,4 +77,4 @@ gulp.task('watch', function () {
     gulp.watch('app/js/**/*.js', gulp.parallel('js'))
 });
 
-gulp.task('default', gulp.parallel('style', 'sass', 'watch', 'browser-sync'))
+gulp.task('default', gulp.parallel('style', 'script', 'sass', 'watch', 'browser-sync'))
