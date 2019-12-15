@@ -450,6 +450,86 @@
     }
 }
 
+.footer {
+    background-image: url('../img/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 275px;
+    color: #fff;
+    text-transform: uppercase;
+
+
+
+
+    &__inner {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 75px;
+    }
+
+    &__item {
+        max-width: 210px;
+
+
+        &-title {
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+    }
+
+    &__menu {
+        li {
+            display: block;
+            padding-bottom: 5px;
+
+
+            a {
+                color: #bbbbbb;
+                font-size: 15px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &__form {
+        &-title {
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+
+
+        &-newsletter {
+            margin-top: 45px;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+        }
+
+        &-email {
+            max-width: 250px;
+            width: 100%;
+            background-color: rgba(#fff, .4);
+            border: none;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            margin-right: 45px;
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+    }
+}
+
 // Slick settings
 
 .slick-dots {
