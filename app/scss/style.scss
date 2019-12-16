@@ -2,35 +2,9 @@
 
 
 .header {
-    position: relative;
-    height: 975px;
-    overflow: hidden;
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        background-image: url(../img/content/orange-line.png);
-        background-repeat: no-repeat;
-        top: 0;
-
-    }
-
-    &::before {
-        right: 343px;
-        width: 363px;
-        height: 1080px;
-    }
-
-    &::after {
-        left: 397px;
-        width: 363px;
-        height: 1080px;
-        z-index: -1;
-    }
+    min-height: 1080px;
 
     &__menu {
-
 
         &-inner {
             display: -webkit-flex;
@@ -39,6 +13,10 @@
             display: -o-flex;
             display: flex;
             align-items: center;
+
+            .logo {
+                z-index: 4;
+            }
 
         }
     }
@@ -69,54 +47,30 @@
     }
 }
 
+// Need a FIX
+
 .items {
 
-
-
     &__inner {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        justify-content: flex-start;
 
 
+        .wrapper {
+            position: relative;
+            padding-top: 56.25%;
+        }
 
-        img {
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+        .mainbg {
             position: absolute;
+            left: 0;
             top: 0;
-            z-index: -1;
-
-
-        }
-
-        .first-item {
-            width: auto;
-            height: auto;
-
-        }
-
-        .second-item {
-            left: 400px;
-            width: auto;
+            width: 100%;
             height: auto;
             z-index: -1;
-
         }
-
-    }
-
-    .third-item {
-        left: 1140px;
-        width: auto;
-        height: auto;
-        z-index: -2;
     }
 }
+
+//
 
 
 .item-container-s,
@@ -125,7 +79,8 @@
     max-width: 370px;
     width: 100%;
     min-height: 205px;
-    position: relative;
+    position: absolute;
+    top: 345px;
     border: 1px solid transparent;
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -165,22 +120,18 @@
 
 .item-container-f {
     left: 70px;
-    top: 345px;
     background-color: rgba(#fff, .4);
 
 
 }
 
 .item-container-s {
-    left: 420px;
-    top: 345px;
-    //    top: 290px;
+    left: 750px;
     background-color: rgba(#fff, .4);
 }
 
 .item-container-t {
-    left: 740px;
-    top: 345px;
+    right: 40px;
     background-color: rgba(#fff, .4);
 }
 
@@ -469,7 +420,6 @@
         display: -o-flex;
         display: flex;
         justify-content: space-around;
-        margin-top: 75px;
     }
 
     &__item {
@@ -479,6 +429,7 @@
         &-title {
             font-size: 20px;
             font-weight: normal;
+            margin-top: 75px;
         }
 
     }
@@ -498,12 +449,6 @@
     }
 
     &__form {
-        &-title {
-            font-size: 20px;
-            font-weight: normal;
-        }
-
-
 
         &-newsletter {
             margin-top: 45px;
@@ -566,3 +511,5 @@
 }
 
 //
+
+@import "media";
